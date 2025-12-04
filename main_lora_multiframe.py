@@ -93,7 +93,7 @@ if __name__ == '__main__':
         num_nodes=1,
         num_sanity_val_steps=0, # runs a validation step before stating training
         precision='16-mixed', # we use half precision to reduce  memory usage
-        max_epochs=20,
+        max_epochs=8,
         check_val_every_n_epoch=1, # run validation every epoch
         callbacks=[checkpoint_cb],# we only run the checkpointing callback (you can add more)
         reload_dataloaders_every_n_epochs=1, # we reload the dataset to shuffle the order
