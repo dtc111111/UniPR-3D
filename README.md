@@ -32,7 +32,7 @@
 
 <p align="center">
   <a href="">
-    <img src="./assets/vis.png" width="100%">
+    <img src="./assets/vggt-salad.png" width="100%">
   </a>
 </p>
 
@@ -78,14 +78,19 @@ You may need to mount your data directory to access the datasets, e.g., add `-v 
   If have to download following datasets to evaluate our method or reproduce our results.
 
   **For training:**
-  We use <a href="https://www.mapillary.com/dataset/places">Mapillary</a> (MSLS) (<a href="https://github.com/mapillary/mapillary_sls">github repo</a>) dataset for training our model. (52G)
+  We use <a href="https://www.kaggle.com/datasets/amaralibey/gsv-cities">GSV-Cities</a> (<a href="https://github.com/amaralibey/gsv-cities">github repo</a>) dataset for training our single-frame model and <a href="https://www.mapillary.com/dataset/places">Mapillary</a> (MSLS) (<a href="https://github.com/mapillary/mapillary_sls">github repo</a>) dataset for training our multi-frame model.
 
   **For evaluation:**
-  Apart from MSLS Validation, we use several datasets for evaluation:
-  - Two sequence from <a href="https://robotcar-dataset.robots.ox.ac.uk/datasets/">Oxford RobotCar</a>, you may download them <a href="https://entuedu-my.sharepoint.com/personal/heshan001_e_ntu_edu_sg/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fheshan001%5Fe%5Fntu%5Fedu%5Fsg%2FDocuments%2Fcasevpr%5Fdatasets%2Foxford%5Frobotcar&viewid=e5dcb0e9%2Db23f%2D44cf%2Da843%2D7837d3064c2e&ga=1">here</a>.
-    - 2014-12-16-18-44-24 (winter night) query to 2014-11-18-13-20-12 (fall day) db
-    - 2014-11-14-16-34-33 (fall night) query to 2015-11-13-10-28-08 (fall day) db
-  - <a href="https://github.com/gmberton/VPR-datasets-downloader/blob/main/download_nordland.py">Nordland (filtered) dataset</a>
+  - Single frame evaluation:
+    - <a href="https://codalab.lisn.upsaclay.fr/competitions/865">MSLS Challenge</a>, where you upload your predictions to their server for evaluation.
+    - Single-frame <a href="https://www.mapillary.com/dataset/places">MSLS</a> Validation set
+    - Nordland dataset, <a href="https://data.ciirc.cvut.cz/public/projects/2015netVLAD/Pittsburgh250k/">Pittsburgh</a> dataset and SPED dataset, you may download them from <a href="https://surfdrive.surf.nl/index.php/s/sbZRXzYe3l0v67W">here</a>, aligned with DINOv2 SALAD.
+  - Multi-frame evaluation:
+    - Multi-frame <a href="https://www.mapillary.com/dataset/places">MSLS</a> Validation set
+    - Two sequence from <a href="https://robotcar-dataset.robots.ox.ac.uk/datasets/">Oxford RobotCar</a>, you may download them <a href="https://entuedu-my.sharepoint.com/personal/heshan001_e_ntu_edu_sg/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fheshan001%5Fe%5Fntu%5Fedu%5Fsg%2FDocuments%2Fcasevpr%5Fdatasets%2Foxford%5Frobotcar&viewid=e5dcb0e9%2Db23f%2D44cf%2Da843%2D7837d3064c2e&ga=1">here</a>.
+      - 2014-12-16-18-44-24 (winter night) query to 2014-11-18-13-20-12 (fall day) db
+      - 2014-11-14-16-34-33 (fall night) query to 2015-11-13-10-28-08 (fall day) db
+    - <a href="https://github.com/gmberton/VPR-datasets-downloader/blob/main/download_nordland.py">Nordland (filtered) dataset</a>
 
   Before training or evaluation, please download the dataset and replace the paths with your own paths in `/dataloaders/*`
 
@@ -146,7 +151,7 @@ You may need to mount your data directory to access the datasets, e.g., add `-v 
     <td>58.4</td>
     <td>74.6</td>
     <td>94.6</td>
-    <td>98.3</td>
+    <td><u>98.3</u></td>
     <td>85.2</td>
     <td>92.1</td>
   </tr>
@@ -167,30 +172,30 @@ You may need to mount your data directory to access the datasets, e.g., add `-v 
   <tr>
     <td>DINOv2 SALAD</td>
     <td>2.41</td>
-    <td>73.0</td>
-    <td>86.8</td>
-    <td>91.2</td>
-    <td>95.3</td>
-    <td>69.6</td>
-    <td>84.4</td>
-    <td>94.5</td>
-    <td>98.7</td>
-    <td>89.5</td>
-    <td>94.4</td>
+    <td><u>73.0</u></td>
+    <td><u>86.8</u></td>
+    <td><u>91.2</u></td>
+    <td><u>95.3</u></td>
+    <td><u>69.6</u></td>
+    <td><u>84.4</u></td>
+    <td><u>94.5</u></td>
+    <td><b>98.7</b></td>
+    <td><u>89.5</u></td>
+    <td><u>94.4</u></td>
   </tr>
   <tr>
     <td>UniPR-3D (ours)</td>
     <td>8.23</td>
-    <td>74.3</td>
-    <td>87.5</td>
-    <td>91.4</td>
-    <td>96.0</td>
-    <td>76.2</td>
-    <td>87.3</td>
-    <td>94.9</td>
+    <td><b>74.3</b></td>
+    <td><b>87.5</b></td>
+    <td><b>91.4</b></td>
+    <td><b>96.0</b></td>
+    <td><b>76.2</b></td>
+    <td><b>87.3</b></td>
+    <td><b>94.9</b></td>
     <td>98.1</td>
-    <td>89.6</td>
-    <td>94.5</td>
+    <td><b>89.6</b></td>
+    <td><b>94.5</b></td>
   </tr>
 </table>
 
@@ -218,21 +223,6 @@ You may need to mount your data directory to access the datasets, e.g., add `-v 
     <th>R@1</th>
     <th>R@5</th>
     <th>R@10</th>
-  </tr>
-  <tr>
-    <td>SeqSLAM</td>
-    <td>45.9</td>
-    <td>58.2</td>
-    <td>70.4</td>
-    <td>53.1</td>
-    <td>67.4</td>
-    <td>71.9</td>
-    <td>34.7</td>
-    <td>51.1</td>
-    <td>70.2</td>
-    <td>26.5</td>
-    <td>36.9</td>
-    <td>44.0</td>
   </tr>
   <tr>
     <td>SeqMatchNet</td>
@@ -266,33 +256,33 @@ You may need to mount your data directory to access the datasets, e.g., add `-v 
   </tr>
   <tr>
     <td>CaseVPR</td>
-    <td>91.2</td>
-    <td>94.1</td>
-    <td>95.0</td>
-    <td>84.1</td>
-    <td>89.9</td>
-    <td>92.2</td>
-    <td>90.5</td>
-    <td>95.2</td>
-    <td>96.5</td>
-    <td>72.8</td>
-    <td>85.8</td>
-    <td>89.9</td>
+    <td><u>91.2</u></td>
+    <td><u>94.1</u></td>
+    <td><u>95.0</u></td>
+    <td><u>84.1</u></td>
+    <td><u>89.9</u></td>
+    <td><u>92.2</u></td>
+    <td><u>90.5</u></td>
+    <td><u>95.2</u></td>
+    <td><u>96.5</u></td>
+    <td><u>72.8</u></td>
+    <td><u>85.8</u></td>
+    <td><u>89.9</u></td>
   </tr>
   <tr>
     <td>UniPR-3D (ours)</td>
-    <td>93.7</td>
-    <td>95.7</td>
-    <td>96.9</td>
-    <td>86.8</td>
-    <td>91.7</td>
-    <td>93.8</td>
-    <td>95.4</td>
-    <td>98.1</td>
-    <td>98.7</td>
-    <td>80.6</td>
-    <td>90.3</td>
-    <td>93.9</td>
+    <td><b>93.7</b></td>
+    <td><b>95.7</b></td>
+    <td><b>96.9</b></td>
+    <td><b>86.8</b></td>
+    <td><b>91.7</b></td>
+    <td><b>93.8</b></td>
+    <td><b>95.4</b></td>
+    <td><b>98.1</b></td>
+    <td><b>98.7</b></td>
+    <td><b>80.6</b></td>
+    <td><b>90.3</b></td>
+    <td><b>93.9</b></td>
   </tr>
 </table>
 
