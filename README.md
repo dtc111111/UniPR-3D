@@ -310,7 +310,7 @@ If you find our paper and code useful, please cite us:
 @inproceedings{deng2026_unipr3d,
   title     = {UniPR-3D: Towards Universal Visual Place Recognition with 3D Visual Geometry Grounded Transformer},
   author    = {Tianchen Deng and Xun Chen and Ziming Li and Hongming Shen and Danwei Wang and Javier Civera and Hesheng Wang},
-  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  booktitle = {Arxiv},
   year      = {2026},
 }
 ```
