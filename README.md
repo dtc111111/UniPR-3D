@@ -72,7 +72,8 @@ You may need to mount your data directory to access the datasets, e.g., add `-v 
 
 # 🚀 Usage
 ## Downloading Pretrained Models
-  You may download our pretrained models from <a href="https://huggingface.co/SJTU/UniPR-3D/tree/main">hugging face</a> or from release and place them anywhere you like.
+  To achieve higher performance, we separately train single-frame and multi-frame models.
+  You may download our pretrained models from <a href="https://huggingface.co/dtc111/UniPR-3D/tree/main">hugging face</a> or from release and place them anywhere you like.
 
 ## Downloading the Datasets
   If have to download following datasets to evaluate our method or reproduce our results.
@@ -97,6 +98,9 @@ You may need to mount your data directory to access the datasets, e.g., add `-v 
 ## Training
   To reproduce our results and train the model, run:
   ```
+  # For single-frame model training
+  python3 main_ft.py
+  # For multi-frame model training
   python3 main_lora_multiframe.py
   ```
   Make sure to set the correct paths in the python file before running.
@@ -104,6 +108,7 @@ You may need to mount your data directory to access the datasets, e.g., add `-v 
 ## Evaluating
   To evaluate the model on datasets mentioned above, run:
   ```
+  # For both single frame and multi-frame evaluation
   python3 eval_lora.py
   ```
   Make sure to set the correct paths in the python file before running. If you are evaluating directly based on our pretrained models, you may need to set the path to the pretrained model in the python file as well.
