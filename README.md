@@ -17,7 +17,7 @@
     <strong>Hesheng Wang</strong><sup>1</sup>
 </p>
 
-<!-- <p align="center"><strong>International Conference on 3D Vision (3DV) 2025</strong></a> -->
+<!-- <p align="center"><strong>ECCV 2026</strong></a> -->
 <p align="center">
     <sup>1</sup>Shanghai Jiao Tong University· <sup>2</sup>Nanyang Technological University· <sup>3</sup>University of Zaragoza
 </p>
